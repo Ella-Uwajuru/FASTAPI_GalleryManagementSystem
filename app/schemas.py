@@ -9,6 +9,10 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     password: str
 
+class UserUpdate(BaseModel):
+    email: Optional[str] = None
+    username: Optional[str] = None   
+
 class User(UserBase):
     id: int
     class Config:
@@ -20,6 +24,15 @@ class ArtistBase(BaseModel):
 
 class ArtistCreate(ArtistBase):
     user_id: int
+
+# Add this to your existing schemas
+
+class ArtistUpdate(BaseModel):
+    bio: Optional[str] = None
+    specialization: Optional[str] = None
+
+    class Config:
+        from_attributes = True
 
 class Artist(ArtistBase):
     id: int
