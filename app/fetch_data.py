@@ -1,6 +1,5 @@
 import requests
 import pandas as pd
-from datetime import datetime
 
 BASE_URL = "http://127.0.0.1:8000"
 
